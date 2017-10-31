@@ -1,0 +1,31 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d.axes3d import Axes3D
+import pandas as pd
+from matplotlib import cm
+import scipy
+
+rowstart = 125
+rowend = 325
+columnstart = 775
+columnend = 975
+
+
+data = pd.read_table('/home/flom/Desktop/REU/Data/April_26.asc', skiprows = rowstart - 1, nrows = rowend - rowstart, usecols = range(columnstart,columnend,1))
+#print data 
+
+
+#nx, ny = columnnum, rownum
+y = range(rowstart, rowend, 1)
+x = range(columnstart, columnend, 1)
+hf = plt.figure()
+ha = hf.add_subplot(111, projection='3d')
+X, Y = np.meshgrid(x, y)  
+
+ha.plot_surface(X,Y,data,rstride=1,cstride=1, cmap = 'cool', linewidth = 0.05, antialiased = True)
+plt.title('LG 2-1 beam @ 80mm')
+
+#hb = hf.add_subplot(111, projection='3d')
+#hb.scatter(X, Y, data)
+
+plt.show()

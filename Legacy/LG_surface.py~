@@ -1,0 +1,9 @@
+
+
+
+
+
+
+Z = A((-1.0)**p)*exp(-1j*l*theta)*exp((-r**2.0)/(w**2.0))*(((2.0**0.5)*r/w)**l)*(scipy.special.genlaguerre((2.0*r**2)/(w**2)))
+
+#Z in cartesian coordinates
