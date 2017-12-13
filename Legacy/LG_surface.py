@@ -9,6 +9,7 @@ import pandas as pd
 import scipy.optimize as opt
 import scipy.odr
 from scipy.odr import ODR, Model, Data, RealData
+%pyplot inline
 
 
 xmin = 100 
